@@ -1,0 +1,117 @@
+---
+const faqs = [
+  {
+    question: "How does the bill saving service work?",
+    answer: "Our service analyzes your bills to identify potential savings opportunities. We look for unused services, available discounts, and better rate plans to help you reduce your costs."
+  },
+  {
+    question: "What types of bills can be processed?",
+    answer: "We can process most utility bills (electricity, water, gas), telecom services (mobile, internet, cable TV), subscription services, and many other recurring service bills."
+  },
+  {
+    question: "How secure is my bill information?",
+    answer: "We take security very seriously. All your data is encrypted both in transit and at rest. We use bank-level security protocols and never share your information with third parties without your explicit consent."
+  },
+  {
+    question: "How much money can I typically save?",
+    answer: "Savings vary depending on your current services and bills, but our customers save an average of 15-20% on their monthly bills after implementing our recommendations."
+  },
+  {
+    question: "Do I need to switch service providers to save money?",
+    answer: "Not necessarily. While switching providers can sometimes offer significant savings, we also identify opportunities with your current providers, such as unused services, available discounts, or better rate plans."
+  },
+  {
+    question: "How long does it take to see results?",
+    answer: "You'll receive initial recommendations within 48 hours of uploading your bills. Actual savings will depend on how quickly you implement the suggestions, but most customers start saving within the first billing cycle."
+  }
+];
+---
+
+<section id="faq" class="faq">
+  <div class="container">
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    <p class="section-subtitle">Find answers to common questions about our service</p>
+    
+    <div class="faq-container">
+      {faqs.map((faq, index) => (
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" aria-controls={`faq-answer-${index}`}>
+            {faq.question}
+            <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer" id={`faq-answer-${index}`}>
+            <p>{faq.answer}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  // Add click event to FAQ questions
+  document.addEventListener('DOMContentLoaded', () => {
+    const questions = document.querySelectorAll('.faq-question');
+    
+    questions.forEach(question => {
+      question.addEventListener('click', () => {
+        const isExpanded = question.getAttribute('aria-expanded') === 'true';
+        question.setAttribute('aria-expanded', !isExpanded);
+      });
+    });
+  });
+</script>
+
+<style>
+  .faq {
+    background-color: var(--color-background-alt);
+  }
+  
+  .faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .faq-item {
+    margin-bottom: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .faq-question {
+    width: 100%;
+    background-color: white;
+    border: none;
+    text-align: left;
+    padding: 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .faq-icon {
+    transition: transform 0.3s ease;
+  }
+  
+  .faq-question[aria-expanded="true"] .faq-icon {
+    transform: rotate(180deg);
+  }
+  
+  .faq-answer {
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  .faq-question[aria-expanded="true"] + .faq-answer {
+    padding: 0 1.5rem 1.5rem;
+    max-height: 300px;
+  }
+</style> 

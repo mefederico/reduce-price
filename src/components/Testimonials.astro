@@ -1,0 +1,149 @@
+---
+const testimonials = [
+  {
+    name: "Jane Smith",
+    title: "Homeowner",
+    image: "/images/testimonial-1.jpg",
+    content: "I was skeptical at first, but after using BillSaver for just two months, I've saved over $200 on my utility and subscription bills. The recommendations were spot-on and easy to implement."
+  },
+  {
+    name: "John Davis",
+    title: "Small Business Owner",
+    image: "/images/testimonial-2.jpg",
+    content: "As a small business owner, every dollar counts. BillSaver helped me identify several unused services and negotiate better rates with my providers. It's been a game-changer for my budget!"
+  },
+  {
+    name: "Maria Rodriguez",
+    title: "Family of Four",
+    image: "/images/testimonial-3.jpg",
+    content: "The family plan has been perfect for us. We've been able to consolidate services across our household and save significantly. The quarterly consultations have been invaluable."
+  },
+  {
+    name: "Robert Chen",
+    title: "Apartment Dweller",
+    image: "/images/testimonial-4.jpg",
+    content: "Even with limited bills in my apartment, BillSaver found me better internet and streaming deals. Their customer service is excellent and responsive to all my questions."
+  }
+];
+---
+
+<section id="testimonials" class="testimonials">
+  <div class="container">
+    <h2 class="section-title">What Our Customers Say</h2>
+    <p class="section-subtitle">Real people, real savings</p>
+    
+    <div class="testimonials-grid">
+      {testimonials.map(testimonial => (
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <div class="quote-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"></path>
+                <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"></path>
+              </svg>
+            </div>
+            <p class="testimonial-text">{testimonial.content}</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">
+                <img src={testimonial.image} alt={testimonial.name} />
+              </div>
+              <div class="author-info">
+                <h4 class="author-name">{testimonial.name}</h4>
+                <p class="author-title">{testimonial.title}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+    
+    <div class="testimonial-cta">
+      <p>Join thousands of happy customers who are saving money every month</p>
+      <a href="#pricing" class="btn btn-primary">Start Saving Today</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .testimonials {
+    background-color: var(--color-background-alt);
+  }
+  
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+  }
+  
+  .testimonial-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  }
+  
+  .testimonial-content {
+    padding: 2rem;
+    position: relative;
+  }
+  
+  .quote-icon {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    color: rgba(74, 108, 247, 0.1);
+  }
+  
+  .testimonial-text {
+    margin-bottom: 1.5rem;
+    font-style: italic;
+    line-height: 1.6;
+  }
+  
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+  }
+  
+  .author-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 1rem;
+    flex-shrink: 0;
+  }
+  
+  .author-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .author-name {
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+  }
+  
+  .author-title {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+  }
+  
+  .testimonial-cta {
+    text-align: center;
+    margin-top: 3rem;
+  }
+  
+  .testimonial-cta p {
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+  }
+</style> 
