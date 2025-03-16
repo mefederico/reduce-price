@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <circle cx="100" cy="100" r="100" fill="#a5b4fc" /> <!-- Light indigo -->
+  <circle cx="100" cy="85" r="40" fill="#6366f1" /> <!-- Indigo -->
+  <circle cx="100" cy="200" r="65" fill="#6366f1" /> <!-- Indigo -->
+</svg> 

@@ -101,84 +101,163 @@
   }
   
   .feature {
-    background-color: var(--color-background-alt);
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    background-color: var(--color-background);
+    padding: 2.5rem 2rem;
+    border-radius: 16px;
+    box-shadow: var(--box-shadow);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+  }
+  
+  .feature::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(236, 72, 153, 0.05) 100%);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
   }
   
   .feature:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transform: translateY(-10px);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  .feature:hover::before {
+    opacity: 1;
   }
   
   .feature-icon {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background-color: rgba(74, 108, 247, 0.1);
-    color: var(--color-primary);
+    width: 70px;
+    height: 70px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 100%);
+    color: white;
     margin-bottom: 1.5rem;
+    box-shadow: 0 10px 20px rgba(99, 102, 241, 0.2);
   }
   
   .feature h3 {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     margin-bottom: 1rem;
+    color: var(--color-text);
   }
   
   .service-steps {
-    margin-top: 4rem;
+    margin-top: 6rem;
+    background-color: var(--color-background-alt);
+    padding: 3rem;
+    border-radius: 16px;
+    box-shadow: var(--box-shadow);
   }
   
   .service-steps h3 {
     text-align: center;
-    font-size: 1.8rem;
-    margin-bottom: 2rem;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    color: var(--color-text);
   }
   
   .steps {
     list-style: none;
     counter-reset: step-counter;
+    position: relative;
+  }
+  
+  .steps::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 20px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--color-primary), var(--color-secondary));
+    opacity: 0.3;
   }
   
   .steps li {
     display: flex;
-    gap: 1.5rem;
-    margin-bottom: 2rem;
+    gap: 2rem;
+    margin-bottom: 3rem;
     align-items: flex-start;
+    position: relative;
+  }
+  
+  .steps li:last-child {
+    margin-bottom: 0;
   }
   
   .step-number {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
-    background-color: var(--color-primary);
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
     color: white;
     font-weight: bold;
+    font-size: 1.2rem;
     flex-shrink: 0;
+    box-shadow: 0 10px 15px rgba(99, 102, 241, 0.2);
+    position: relative;
+    z-index: 1;
+  }
+  
+  .step-content {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    flex: 1;
+    transition: transform 0.3s ease;
+  }
+  
+  .steps li:hover .step-content {
+    transform: translateX(10px);
   }
   
   .step-content h4 {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     margin-bottom: 0.5rem;
+    color: var(--color-text);
+  }
+  
+  .step-content p {
+    color: var(--color-text-light);
   }
   
   @media (max-width: 768px) {
+    .steps::before {
+      display: none;
+    }
+    
     .steps li {
       flex-direction: column;
       align-items: center;
       text-align: center;
+      gap: 1rem;
     }
     
     .step-number {
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .step-content {
+      width: 100%;
+    }
+    
+    .steps li:hover .step-content {
+      transform: none;
     }
   }
 </style> 

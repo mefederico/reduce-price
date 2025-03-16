@@ -67,36 +67,82 @@ const faqs = [
 <style>
   .faq {
     background-color: var(--color-background-alt);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .faq::before {
+    content: '';
+    position: absolute;
+    top: -150px;
+    right: -150px;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(16, 185, 129, 0.1) 100%);
+    z-index: 0;
+  }
+  
+  .faq .container {
+    position: relative;
+    z-index: 1;
   }
   
   .faq-container {
     max-width: 800px;
     margin: 0 auto;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: var(--box-shadow);
+    padding: 2rem;
   }
   
   .faq-item {
-    margin-bottom: 1rem;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    border-radius: 12px;
     overflow: hidden;
+    background-color: var(--color-background);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .faq-item:last-child {
+    margin-bottom: 0;
+  }
+  
+  .faq-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
   }
   
   .faq-question {
     width: 100%;
-    background-color: white;
+    background-color: var(--color-background);
     border: none;
     text-align: left;
     padding: 1.5rem;
-    font-size: 1.1rem;
-    font-weight: 500;
+    font-size: 1.2rem;
+    font-weight: 600;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    color: var(--color-text);
+    transition: all 0.3s ease;
+  }
+  
+  .faq-question:hover {
+    color: var(--color-primary);
   }
   
   .faq-icon {
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
+    color: var(--color-primary);
+    width: 24px;
+    height: 24px;
+  }
+  
+  .faq-question[aria-expanded="true"] {
+    border-bottom: 1px solid rgba(99, 102, 241, 0.1);
   }
   
   .faq-question[aria-expanded="true"] .faq-icon {
@@ -108,10 +154,16 @@ const faqs = [
     max-height: 0;
     overflow: hidden;
     transition: all 0.3s ease;
+    background-color: var(--color-background);
   }
   
   .faq-question[aria-expanded="true"] + .faq-answer {
-    padding: 0 1.5rem 1.5rem;
+    padding: 1.5rem;
     max-height: 300px;
+  }
+  
+  .faq-answer p {
+    color: var(--color-text-light);
+    line-height: 1.7;
   }
 </style> 
