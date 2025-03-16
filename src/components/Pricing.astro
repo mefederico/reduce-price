@@ -1,46 +1,46 @@
 ---
 const pricingPlans = [
   {
-    name: "Basic",
-    price: "$9.99",
-    period: "per month",
+    name: "Básico",
+    price: "€9.99",
+    period: "por mes",
     features: [
-      "Bill storage for up to 10 bills",
-      "Basic cost analysis",
-      "Simple savings recommendations",
-      "Email support"
+      "Almacenamiento de hasta 10 facturas",
+      "Análisis básico de costos",
+      "Recomendaciones simples de ahorro",
+      "Soporte por email"
     ],
-    cta: "Get Started",
+    cta: "Comenzar",
     popular: false
   },
   {
     name: "Premium",
-    price: "$19.99",
-    period: "per month",
+    price: "€19.99",
+    period: "por mes",
     features: [
-      "Unlimited bill storage",
-      "Advanced cost analysis",
-      "Personalized savings recommendations",
-      "Provider comparison tool",
-      "Priority email support",
-      "Monthly savings report"
+      "Almacenamiento ilimitado de facturas",
+      "Análisis avanzado de costos",
+      "Recomendaciones personalizadas de ahorro",
+      "Herramienta de comparación de proveedores",
+      "Soporte prioritario por email",
+      "Informe mensual de ahorros"
     ],
-    cta: "Start Saving",
+    cta: "Empieza a Ahorrar",
     popular: true
   },
   {
-    name: "Family",
-    price: "$29.99",
-    period: "per month",
+    name: "Familiar",
+    price: "€29.99",
+    period: "por mes",
     features: [
-      "Everything in Premium",
-      "Up to 5 family members",
-      "Family savings dashboard",
-      "Phone support",
-      "Contract negotiation assistance",
-      "Quarterly savings consultation"
+      "Todo lo incluido en Premium",
+      "Hasta 5 miembros familiares",
+      "Panel de control familiar",
+      "Soporte telefónico",
+      "Asistencia en negociación de contratos",
+      "Consulta trimestral de ahorros"
     ],
-    cta: "Choose Family Plan",
+    cta: "Elegir Plan Familiar",
     popular: false
   }
 ];
@@ -48,13 +48,13 @@ const pricingPlans = [
 
 <section id="pricing" class="pricing">
   <div class="container">
-    <h2 class="section-title">Pricing Plans</h2>
-    <p class="section-subtitle">Choose the plan that fits your needs</p>
+    <h2 class="section-title">Planes de Precios</h2>
+    <p class="section-subtitle">Elige el plan que se adapte a tus necesidades</p>
     
     <div class="pricing-grid">
       {pricingPlans.map(plan => (
         <div class={`pricing-card ${plan.popular ? 'popular' : ''}`}>
-          {plan.popular && <div class="popular-badge">Most Popular</div>}
+          {plan.popular && <div class="popular-badge">Más Popular</div>}
           <h3 class="plan-name">{plan.name}</h3>
           <div class="plan-price">
             <span class="amount">{plan.price}</span>
@@ -71,7 +71,7 @@ const pricingPlans = [
     </div>
     
     <div class="pricing-guarantee">
-      <p>All plans come with a 30-day money-back guarantee. No contracts, cancel anytime.</p>
+      <p>Todos los planes incluyen garantía de devolución de 30 días. Sin contratos, cancela cuando quieras.</p>
     </div>
   </div>
 </section>
