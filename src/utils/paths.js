@@ -11,4 +11,7 @@ export function getPath(path) {
     : basePath;
     
   return `${basePathNormalized}${normalizedPath}`;
-} 
+}
+
+// Exportación por defecto para compatibilidad
+export default { getPath }; 
