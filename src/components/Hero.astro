@@ -1,3 +1,5 @@
+import { getPath } from "../utils/paths.js";
+
 <section class="hero">
   <div class="container">
     <div class="hero-content">
@@ -11,7 +13,7 @@
       </div>
     </div>
     <div class="hero-image">
-      <img src="/images/hero-image.svg" alt="Ilustración de ahorro en facturas" />
+      <img src={getPath('/images/hero-image.svg')} alt="Ilustración de ahorro en facturas" />
     </div>
   </div>
   <div class="hero-shape"></div>

@@ -1,27 +1,29 @@
 ---
+import { getPath } from "../utils/paths.js";
+
 const testimonials = [
   {
     name: "María López",
     title: "Propietaria",
-    image: "/images/testimonial-1.svg",
+    image: getPath('/images/testimonial-1.svg'),
     content: "Al principio estaba escéptica, pero después de usar BillSaver durante solo dos meses, he ahorrado más de 180€ en mis facturas de servicios y suscripciones. Las recomendaciones fueron acertadas y fáciles de implementar."
   },
   {
     name: "Juan Rodríguez",
     title: "Pequeño Empresario",
-    image: "/images/testimonial-2.svg",
+    image: getPath('/images/testimonial-2.svg'),
     content: "Como pequeño empresario, cada euro cuenta. BillSaver me ayudó a identificar varios servicios no utilizados y a negociar mejores tarifas con mis proveedores. ¡Ha sido un cambio radical para mi presupuesto!"
   },
   {
     name: "Ana García",
     title: "Familia de Cuatro",
-    image: "/images/testimonial-3.svg",
+    image: getPath('/images/testimonial-3.svg'),
     content: "El plan familiar ha sido perfecto para nosotros. Hemos podido consolidar servicios en todo nuestro hogar y ahorrar significativamente. Las consultas trimestrales han sido invaluables."
   },
   {
     name: "Roberto Martínez",
     title: "Inquilino",
-    image: "/images/testimonial-4.svg",
+    image: getPath('/images/testimonial-4.svg'),
     content: "Incluso con facturas limitadas en mi apartamento, BillSaver me encontró mejores ofertas de internet y streaming. Su servicio al cliente es excelente y responde a todas mis preguntas."
   }
 ];
